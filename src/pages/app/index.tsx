@@ -13,7 +13,7 @@ export default function App({ tasks }: TasksProps) {
   async function handleCreateTask(e: FormEvent) {
     e.preventDefault();
 
-    await fetch("http://localhost:3000/api/tasks/create", {
+    await fetch("/api/tasks/create", {
       method: "POST",
       body: JSON.stringify({ title: newTask }),
       headers: {
