@@ -7,7 +7,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
+model Task {
   id String @id @default(auto()) @map("_id") @db.ObjectId
-  // Other fields
+
+  title  String
+  isDone Boolean
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
